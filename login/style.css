@@ -1,0 +1,36 @@
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+
+.col-md-9 .img-fluid {
+  height: 450px;
+  width: 320px;
+}
+
+.footer {
+  background: #63ff75;
+}
+
+.btn {
+  background: #63ff75;
+}
+
+a {
+  text-decoration: none;
+}
+
+.link {
+  color: #63ff75;
+}
