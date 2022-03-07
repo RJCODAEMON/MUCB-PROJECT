@@ -18,17 +18,20 @@ a {
   text-decoration: none !important;
 }
 
-.btn-order {
-  background: rgb(218, 248, 45) !important;
-  padding: 0.589rem 0.98rem !important;
-  border-radius: 12px !important;
+.btn {
+  padding: 0.589rem 1.568rem !important;
+  border-radius: 0px !important;
   outline: none !important;
   border: none !important;
+}
+
+.order-btn {
+  background: #ffb300 !important;
   color: #fff !important;
 }
 
 /* navbar */
-.nav-menu ul > li {
+.nav-menu ul li {
   margin: 0px 20px 0px 0px;
 }
 
