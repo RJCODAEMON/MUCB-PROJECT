@@ -25,6 +25,25 @@ a {
   text-decoration: none !important;
 }
 
+section .section-title {
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+section .section-title::after {
+  position: absolute;
+  content: "";
+  bottom: -20%;
+  left: 0;
+  width: 10%;
+  height: 6px;
+  background: #faff11;
+}
+
 .btn {
   padding: 0.589rem 1.568rem !important;
   outline: none !important;
@@ -135,7 +154,7 @@ section.hero {
 #services .services-card {
   position: relative;
   width: 100%;
-  height: 230px;
+  height: 250px;
   margin: 0.59rem 0;
   background: rgba(251, 252, 252);
   display: flex;
@@ -143,7 +162,7 @@ section.hero {
 }
 
 #services .services-card .img-container {
-  width: 30%;
+  width: 35%;
   height: 100%;
   background: hsla(219, 72%, 49%, 0.55);
 }
@@ -172,13 +191,13 @@ section.banner {
   height: 256px;
   background: #d0d3d4;
   margin: 0.59rem 0;
-  border-top-left-radius: 0.59rem;
-  border-top-right-radius: 0.59rem;
+  border-top-left-radius: 0.79rem;
+  border-top-right-radius: 0.79rem;
 }
 
 /* download sec */
 section.dwn-sec {
-  height: 30vh;
+  height: 25vh;
   width: 100%;
   background: #6b55f2;
 }
