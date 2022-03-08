@@ -1,5 +1,5 @@
 /* import font*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&family=Roboto&display=swap");
 
 *::before,
 *::after {
@@ -58,41 +58,6 @@ section .section-title::after {
   height: 43px !important;
 }
 
-.cart-btn {
-  position: relative;
-  background: #f9f9f9;
-  border-radius: 20px !important;
-  border: 1px solid rgba(226, 13, 13, 0.6) !important;
-}
-
-.cart-btn .count {
-  position: absolute;
-  top: 10%;
-  right: -16%;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  background-color: #faff11;
-  color: rgba(0, 0, 0, 0.6) !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.cart-btn .cart-design {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 10px;
-  color: rgba(0, 0, 0, 0.74);
-  font-family: "Roboto", sans-serif !important;
-}
-
 .cart-btn .cart-design span {
   margin-left: 6px;
 }
@@ -102,8 +67,31 @@ section .section-title::after {
   font-size: 22px;
 }
 
+.navbar-brand {
+  letter-spacing: 3px;
+  color: #c24244;
+}
+
+.navbar-brand:hover {
+  color: #c24244;
+}
+
+.navbar-scroll .nav-link,
+.navbar-scroll .fa-bars {
+  color: #7f4722;
+}
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .fa-bars {
+  color: #7f4722;
+}
+
+.navbar-scrolled {
+  background-color: #ffede7;
+}
+
 /* navbar */
-.navbar .navbar-brand {
+/* .navbar .navbar-brand {
   font-weight: bold;
   font-size: 42px;
   line-height: 49px;
@@ -115,9 +103,10 @@ section .section-title::after {
 }
 
 .navbar-nav .nav-item .nav-link {
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 600;
-  font-size: 16px !important;
+  font-weight: 400;
+  font-size: 0.933rem !important;
   color: #000 !important;
   letter-spacing: 1px;
   transition: hover 0.2s ease;
@@ -143,7 +132,7 @@ section .section-title::after {
     flex-direction: column;
     justify-content: space-between !important;
   }
-}
+} */
 /* hero */
 section.hero {
   position: relative;
