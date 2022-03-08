@@ -1,3 +1,6 @@
+/* import font*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto&display=swap");
+
 *::before,
 *::after {
   margin: 0 !important;
@@ -7,6 +10,10 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
 }
 
 /* reusability */
@@ -20,19 +27,85 @@ a {
 
 .btn {
   padding: 0.589rem 1.568rem !important;
-  border-radius: 0px !important;
   outline: none !important;
   border: none !important;
+  border-radius: 5px !important;
 }
 
 .order-btn {
-  background: #ffb300 !important;
+  background: rgba(226, 13, 13, 0.6) !important;
   color: #fff !important;
+  width: 203px !important;
+  height: 43px !important;
+}
+
+.cart-btn {
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 20px !important;
+  border: 1px solid rgba(226, 13, 13, 0.6) !important;
+}
+
+.cart-btn .count {
+  position: absolute;
+  top: 10%;
+  right: -16%;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #faff11;
+  color: rgba(0, 0, 0, 0.6) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cart-btn .cart-design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 10px;
+  color: rgba(0, 0, 0, 0.74);
+  font-family: "Roboto", sans-serif !important;
+}
+
+.cart-btn .cart-design span {
+  margin-left: 6px;
+}
+
+.cart-btn .cart-design i {
+  color: rgba(226, 13, 13, 0.6) !important;
+  font-size: 22px;
 }
 
 /* navbar */
-.nav-menu ul li {
+.navbar .navbar-brand {
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 49px;
+  color: rgba(226, 13, 13, 0.6) !important;
+}
+
+.navbar-nav .nav-item {
   margin: 0px 20px 0px 0px;
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px !important;
+  color: #000 !important;
+  letter-spacing: 1px;
+  transition: hover 0.2s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: rgba(226, 13, 13, 0.6) !important;
 }
 
 .nav-menu .nav-list {
@@ -72,7 +145,7 @@ section.hero {
 #services .services-card .img-container {
   width: 30%;
   height: 100%;
-  background: rgb(105, 82, 242);
+  background: hsla(219, 72%, 49%, 0.55);
 }
 
 #about .about-card {
