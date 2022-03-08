@@ -116,11 +116,15 @@ section .section-title::after {
 
 .navbar-nav .nav-item .nav-link {
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px !important;
   color: #000 !important;
   letter-spacing: 1px;
   transition: hover 0.2s ease;
+}
+
+.navbar-nav .nav-item .nav-link.active {
+  color: rgba(226, 13, 13, 0.6) !important;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
@@ -142,6 +146,7 @@ section .section-title::after {
 }
 /* hero */
 section.hero {
+  position: relative;
   height: 60vh;
   width: 100%;
   background: radial-gradient(
