@@ -14,6 +14,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif !important;
+  overflow-x: hidden;
 }
 
 /* reusability */
@@ -26,22 +27,24 @@ a {
 }
 
 section .section-title {
-  font-size: 28px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.589rem;
   position: relative;
+  color: #000000;
 }
 
 section .section-title::after {
   position: absolute;
   content: "";
-  bottom: -20%;
+  bottom: -30%;
   left: 0;
-  width: 10%;
-  height: 6px;
-  background: #faff11;
+  width: 12%;
+  height: 8px;
+  background: rgba(226, 13, 13, 0.6) !important;
 }
 
 .btn {
@@ -51,6 +54,7 @@ section .section-title::after {
 }
 
 .navbar {
+  background-color: #ffede7;
   padding: 2rem 0rem !important;
   transition: 0.3s ease;
 }
@@ -131,60 +135,88 @@ section .section-title::after {
   /* color: #000000; */
 }
 
-/* navbar */
-/* .navbar .navbar-brand {
-  font-weight: bold;
-  font-size: 42px;
-  line-height: 49px;
-  color: rgba(226, 13, 13, 0.6) !important;
-}
-
-.navbar-nav .nav-item {
-  margin: 0px 20px 0px 0px;
-}
-
-.navbar-nav .nav-item .nav-link {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.933rem !important;
-  color: #000 !important;
-  letter-spacing: 1px;
-  transition: hover 0.2s ease;
-}
-
-.navbar-nav .nav-item .nav-link.active {
-  color: rgba(226, 13, 13, 0.6) !important;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-  color: rgba(226, 13, 13, 0.6) !important;
-}
-
-.nav-menu .nav-list {
-  display: inline-flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  flex-direction: row;
-}
-
-@media screen and (max-width: 800px) {
-  .nav-menu .nav-list {
-    flex-direction: column;
-    justify-content: space-between !important;
-  }
-} */
 /* hero */
 section.hero {
   position: relative;
-  height: 60vh;
+  height: 90vh;
   width: 100%;
   background: radial-gradient(
     78.4% 78.4% at 50.99% 13.14%,
     rgba(255, 9, 9, 0.58) 0%,
     rgba(226, 13, 13, 0.348) 100%
   );
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
+
+.hero video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+section.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, black, rgba(36, 36, 36, 0.664));
+  opacity: 0.4;
+}
+
+.hero .hero-desc {
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  z-index: 10;
+  width: 50%;
+}
+
+.hero .hero-desc .hero--title {
+  font-family: "Montserrat", sans-serif;
+  color: rgba(255, 255, 255);
+  text-transform: uppercase;
+  font-size: 4em;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.hero .report {
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+}
+
+.report .report-1 {
+  background: rgb(226, 205, 13) !important;
+  color: #fff !important;
+  width: 370px !important;
+  height: 43px !important;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 2rem !important;
+}
+
+.report .report-2 {
+  background: rgb(131, 26, 250) !important;
+  color: #fff !important;
+  width: 370px !important;
+  height: 43px !important;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 2rem !important;
+}
+
+/* service card */
 
 #services .services-card {
   position: relative;
@@ -243,3 +275,25 @@ section.dwn-sec {
   height: 40vh;
   background: #000;
 }
+
+/* media queries */
+/* =================== Tablet ============================ */
+
+@media only screen and (max-width: 812px) {
+  .hero .hero-desc .hero--title {
+    font-size: 1.89em;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .hero .report {
+    position: absolute;
+    bottom: 5%;
+    right: 25%;
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* =================== Tablet ============================ */
