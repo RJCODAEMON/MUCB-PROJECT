@@ -360,7 +360,7 @@ section.hero::after {
 .right-side .right-content-wrapper .desc-wrapper a {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 700;
   color: #000;
   transition: 0.246s ease-in;
@@ -440,10 +440,48 @@ section.hero::after {
 
 /* about section */
 #about .about-card {
+  position: relative;
   width: 100%;
-  height: 256px;
-  background: #d0d3d4;
-  margin: 0.59rem 0;
+  height: 250px;
+  background: rgb(238, 103, 100);
+  margin: 1.59rem 0;
+  border-radius: calc(40 * 1px) 0 0 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+  transition: all 0.234s ease-in-out;
+}
+
+#about .about-card .about-card-desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 190px;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  border-radius: calc(40 * 1px) 0 0 0;
+  transition: all 0.234s ease-in-out;
+  overflow: hidden;
+  text-align: right;
+  padding: 1rem 0.39rem 0 0;
+}
+
+.about-card .about-card-desc h3 {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: rgb(238, 103, 100);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.about-card .about-card-desc p {
+  font-size: 15px;
+  color: #adadad;
+  margin-top: 13px;
+}
+
+#about .about-card:hover .about-card-desc {
+  height: 230px;
 }
 
 /* ctc */
