@@ -1,0 +1,118 @@
+/* media queries */
+/* =================== Tablet ============================ */
+
+@media only screen and (max-width: 850px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  .hero .hero-desc {
+    margin-top: 1.4rem !important;
+    width: 60%;
+  }
+
+  .hero .hero-desc .hero--title {
+    font-size: 2.634em !important;
+    font-weight: 500;
+  }
+
+  section .section-title {
+    font-size: 1.56em !important;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+
+  section .section-title::after {
+    width: 40% !important;
+  }
+
+  .btn {
+    padding: 0.589rem 0.68rem !important;
+    outline: none !important;
+    border-radius: 5px !important;
+    font-size: 15px !important;
+  }
+
+  .order-btn {
+    background: rgba(226, 13, 13, 0.6) !important;
+    color: #fff !important;
+    width: 160px !important;
+    height: 43px !important;
+  }
+
+  /* service section */
+  .services-card .card-content .service-name {
+    font-size: 26px !important;
+    font-weight: 600 !important;
+    margin-bottom: 1.35rem !important;
+  }
+
+  .services-card .card-content .desc {
+    font-size: 15px !important;
+    line-height: 27px !important;
+    margin-bottom: 2.34rem !important;
+  }
+
+  .services-card .card-content .label {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 0 !important;
+  }
+
+  .services-card .card-content .label .price {
+    color: #c24244;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 15px !important;
+    letter-spacing: 0px !important;
+  }
+
+  .services-card .card-content .label .btn {
+    padding: 0.489rem 0.348rem !important;
+    outline: none !important;
+    border-radius: 5px !important;
+    font-size: 13px !important;
+  }
+
+  /* car work */
+  .work-pattern {
+    width: 100%;
+    height: auto !important;
+    background: rgb(255, 237, 231);
+    padding-bottom: 8rem !important;
+  }
+
+  .work-pattern .car-skeleton {
+    margin: 1rem 0 !important;
+    height: 600px;
+  }
+
+  .car-skeleton .car-body {
+    display: none !important;
+  }
+
+  .car-skeleton .car-body img {
+    width: 80%;
+    height: 100%;
+  }
+
+  .left-side .row {
+    margin: 0.29rem 0 !important;
+  }
+
+  .right-side .row {
+    margin: 0.29rem 0 !important;
+  }
+
+  .left-side .left-content-wrapper .number-wrapper,
+  .right-side .right-content-wrapper .number-wrapper {
+    position: absolute !important;
+    right: -7% !important;
+    top: -18% !important;
+  }
+
+  .right-side .right-content-wrapper {
+    text-align: left !important;
+  }
+}

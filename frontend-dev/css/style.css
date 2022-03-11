@@ -1,6 +1,8 @@
 /* import font*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&family=Poppins:wght@300;400;500;600&family=Roboto&display=swap");
+@import url("./media.css");
 
+/* statups */
 *::before,
 *::after {
   margin: 0 !important;
@@ -54,12 +56,6 @@ section .section-title::after {
   border-radius: 5px !important;
 }
 
-.navbar {
-  background-color: #ffede7;
-  padding: 2rem 0rem !important;
-  transition: 0.3s ease;
-}
-
 .order-btn {
   background: rgba(226, 13, 13, 0.6) !important;
   color: #fff !important;
@@ -67,9 +63,14 @@ section .section-title::after {
   height: 43px !important;
 }
 
+.navbar {
+  background-color: #ffede7;
+  padding: 2rem 0rem !important;
+  transition: 0.3s ease;
+}
+
 .navbar-brand {
   letter-spacing: 3px;
-  /* color: #c24244; */
   color: #000000;
 }
 
@@ -89,9 +90,9 @@ section .section-title::after {
 }
 
 .cart {
+  position: relative !important;
   background: rgba(226, 13, 13, 0.6) !important;
   color: #fff;
-  position: relative;
   padding: 0.589rem 0.68rem !important;
   outline: none !important;
   border-radius: 5px !important;
@@ -175,7 +176,7 @@ section.hero::after {
 .hero .hero-desc {
   font-family: "Poppins", sans-serif;
   position: absolute;
-  margin-top: 10rem;
+  margin-top: 8rem;
   z-index: 10;
   width: 50%;
   text-align: left;
@@ -443,7 +444,7 @@ section.hero::after {
   position: relative;
   width: 100%;
   height: 250px;
-  background: rgb(238, 103, 100);
+  background: rgb(255, 237, 231);
   margin: 1.59rem 0;
   border-radius: calc(40 * 1px) 0 0 0;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -469,7 +470,7 @@ section.hero::after {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
   font-size: 18px;
-  color: rgb(238, 103, 100);
+  color: #000000;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -497,11 +498,11 @@ section.banner {
 section.banner .ctc-text {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: 4em;
+  font-size: 2.8em;
 }
 
 section.banner .video-ads {
-  /* position: relative; */
+  position: absolute;
   width: 350px;
   height: 350px;
   background: #6b55f2;
@@ -510,10 +511,10 @@ section.banner .video-ads {
 
 /* ambition */
 #ambition .about-card {
-  width: 100%;
+  width: 400px;
   height: 256px;
   background: #d0d3d4;
-  margin: 0.59rem 0;
+  margin: 0.59rem 0rem;
   border-top-left-radius: 0.79rem;
   border-top-right-radius: 0.79rem;
 }
@@ -531,25 +532,3 @@ section.dwn-sec {
   height: 40vh;
   background: #000;
 }
-
-/* media queries */
-/* =================== Tablet ============================ */
-
-@media only screen and (max-width: 812px) {
-  .hero .hero-desc .hero--title {
-    font-size: 1.89em;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-
-  .hero .report {
-    position: absolute;
-    bottom: 5%;
-    right: 25%;
-    z-index: 9;
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-/* =================== Tablet ============================ */
