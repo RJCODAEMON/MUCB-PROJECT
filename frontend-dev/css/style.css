@@ -303,6 +303,7 @@ section.hero::after {
   letter-spacing: 1px;
   margin-bottom: 1.25rem;
   text-transform: uppercase;
+  color: #000000 !important;
 }
 
 .services-card .card-content .desc {
@@ -649,3 +650,85 @@ section.dwn-sec {
 }
 
 /* ================= Product Listing page  ============================== */
+
+/* ================= Product details page  ============================== */
+section.hero1 {
+  position: relative;
+  height: 40vh;
+  width: 100%;
+  background-image: url("../img/hero2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+
+section.hero1 h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 4.19em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 5rem !important;
+}
+
+section.hero1 .breadcrumb {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+section.hero1 .breadcrumb li,
+section.hero1 .breadcrumb li a {
+  color: #fff !important;
+}
+
+.product-detail .left-side {
+  max-height: 650px !important;
+  padding: 0 !important;
+}
+
+.product-detail .left-side .img-wrapper {
+  width: 86%;
+  height: 100% !important;
+  overflow: hidden;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.product-detail .left-side .img-wrapper img {
+  width: 100% !important;
+  height: 100% !important;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.product-detail .left-side .img-wrapper:hover img {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+}
+
+.product-detail .right-side .product-title {
+  font-size: 31.2px;
+  font-family: "Montserrat", sans-serif;
+  color: #393939;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.product-detail .right-side .price {
+  font-size: 31.2px;
+  font-family: "Montserrat", sans-serif;
+  color: #c24244;
+  font-weight: 700;
+}
+
+.product-detail .right-side .desc {
+  margin: 1.5rem 0;
+  font-size: 13px;
+  color: #888888;
+  line-height: 1.459rem;
+}
