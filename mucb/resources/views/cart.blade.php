@@ -209,8 +209,8 @@ var data = JSON.parse(localStorage.getItem('packages'));
                                 </figure>
                             </td>
                             <td class="product-name text-uppercase">`+ data.name +`</td>
-                            <td class="text-danger price">$`+ data.price +`</td>
-                            <td class="text-danger price">$`+ data.price +`</td>
+                            <td class="text-danger price">$`+ data.price +`.00</td>
+                            <td class="text-danger price">$`+ data.price +`.00</td>
                         <tr>
                             <td scope="row" colspan="5">
                                 <form class="coupon-form">
