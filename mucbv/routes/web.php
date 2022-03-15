@@ -15,7 +15,7 @@ use App\Http\Controllers\ProductaddController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 //Package list
 Route::get('package-list', [ProductaddController::class, 'packageList']);
