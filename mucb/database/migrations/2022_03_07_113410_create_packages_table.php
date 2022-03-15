@@ -15,10 +15,10 @@ class CreatePackagesTable extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id('package_id');
-            $table->string('package_name',25);
-            $table->float('package_price'); 
-            $table->binary('package_img');
-            $table->string('package_desc');               
+            $table->string('package_name',50);
+            $table->float('package_price');
+            $table->string('package_img');
+            $table->string('package_desc');
             $table->timestamps();
         });
     }
