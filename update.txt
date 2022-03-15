@@ -1,0 +1,20 @@
+$package = DB::select('select * from packages where package_id = ?', [$id]);
+$package[0]->package_name = $req->input('package_name');
+$package[0]->package_price = $req->input('package_price');
+        
+if($req->hasfile('package_img'))
+{
+    $dest = 'img/'.$package[0]->package_img;
+    if(File::exists($dest))
+    {
+        File::delete($dest);
+    }
+    $file = $req->file('package_img');
+    $extn = $file->getClientOriginalExtension();
+    $filenm = $req->input('package_name').'.'.$extn;
+    $file->move('img/', $filenm);
+    $package[0]->package_img = $filenm;
+}
+$package[0]->package_desc = $req->input('package_desc');
+$package->update();
+return redirect()->back()->with('result','Product Updated Successfully');
