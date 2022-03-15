@@ -816,12 +816,12 @@ section.hero1 .breadcrumb li a {
 }
 
 .billig-details form label {
-  margin: 0.723rem 0;
+  margin: 0.423rem 0;
 }
 
 .billig-details form input,
 .billig-details form select {
-  border-radius: 4em;
+  border-radius: 0.235em;
   height: 45px;
   padding: 0 1.34rem;
 }
@@ -844,5 +844,22 @@ section.hero1 .breadcrumb li a {
 .billig-details form select:active {
   box-shadow: none;
   outline: none;
+}
+
+.billig-details .password {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.billig-details .password.active {
+  display: block;
+}
+
+.payment-details .chechout-btn {
+  height: 60px;
+  padding: 0.25rem 1.367rem !important;
+  border-radius: 4px !important;
+  text-transform: uppercase;
+  font-size: 15.66px !important;
 }
 /* ================= checkout page  ============================== */
