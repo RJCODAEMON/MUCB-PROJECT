@@ -732,3 +732,92 @@ section.hero1 .breadcrumb li a {
   color: #888888;
   line-height: 1.459rem;
 }
+/* ================= Product details page  ============================== */
+
+/* ================= cart page  ============================== */
+.cart-detail .table thead {
+  background: rgba(226, 13, 13, 0.6) !important;
+  color: #fff;
+  padding: 2.45rem 0 !important;
+}
+
+.cart-detail .table thead th {
+  padding: 1.555rem 1rem !important;
+  font-weight: 400 !important;
+  font-size: 17.6px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.cart-detail .table tbody td {
+  padding: 1.05rem 1rem !important;
+  font-weight: 400 !important;
+  font-size: 17.6px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.cart-detail .table tbody td .img-wrapper {
+  display: block;
+  height: 70px;
+  width: 70px;
+  background: #2e2e2e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cart-detail .table .img-wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cart-detail .table .product-name {
+  width: fit-content !important;
+}
+
+.cart-detail .table .price {
+  font-weight: 500 !important;
+  font-size: 17.6px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.coupon-form .form-control {
+  width: 250px;
+  height: 50px;
+  padding: 0.25rem 1.367rem !important;
+  border-radius: 26.37px !important;
+  text-transform: uppercase;
+}
+
+.coupon-form .btn {
+  width: 200px;
+  height: 50px;
+  padding: 0.25rem 1.367rem !important;
+  border-radius: 26.37px !important;
+  text-transform: uppercase;
+}
+
+.coupon-form .form-control:focus,
+.coupon-form .form-control:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.cart-detail .checkout {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 17.6px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.cart-detail .checkout .chechout-btn {
+  height: 50px;
+  padding: 0.25rem 1.367rem !important;
+  border-radius: 26.37px !important;
+  text-transform: uppercase;
+  font-size: 13.66px !important;
+}
+/* ================= cart page  ============================== */
