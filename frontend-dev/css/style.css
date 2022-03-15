@@ -1,5 +1,5 @@
 /* import font*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&family=Poppins:wght@300;400;500;600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;500;700;800;900&family=Poppins:wght@300;400;500;600&family=Roboto&display=swap");
 @import url("./media.css");
 
 /* statups */
@@ -143,7 +143,7 @@ section .section-title::after {
 /* hero */
 section.hero {
   position: relative;
-  height: 90vh;
+  height: 70vh;
   width: 100%;
   background: radial-gradient(
     78.4% 78.4% at 50.99% 13.14%,
@@ -177,45 +177,25 @@ section.hero::after {
 }
 
 .hero .hero-desc {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif !important; */
   position: absolute;
-  margin-top: 8rem;
+  top: 50%;
+  left: 50%;
   z-index: 10;
-  width: 50%;
-  text-align: left;
+  width: 70%;
+  text-align: center;
+  transform: translate(-50%, -40%);
 }
 
 .hero .hero-desc .hero--title {
   font-family: "Montserrat", sans-serif;
-  color: rgba(255, 255, 255);
   text-transform: uppercase;
-  font-size: 3.5em;
+  font-size: 70.6px;
   font-weight: 600;
-  letter-spacing: 3px;
-  line-height: 4.2rem;
-}
-
-.hero .hero-desc .tips-desc li {
-  margin-top: 1.4rem;
-}
-
-.hero .hero-desc .tips-desc .icon-circle {
-  display: inline-block;
-  margin-right: 1rem;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  padding: 0.2rem 0.2rem;
-  background: rgb(0, 186, 103);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero .hero-desc .tips-desc .tips {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
+  line-height: 5.2rem;
+  margin-bottom: 4rem;
+  color: rgb(255, 255, 255);
 }
 
 /* service card */
@@ -821,3 +801,48 @@ section.hero1 .breadcrumb li a {
   font-size: 13.66px !important;
 }
 /* ================= cart page  ============================== */
+
+/* ================= checkout page  ============================== */
+
+.billig-details h4 {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 400;
+  font-size: 27.45px;
+  text-transform: uppercase;
+}
+
+.billig-details form {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.billig-details form label {
+  margin: 0.723rem 0;
+}
+
+.billig-details form input,
+.billig-details form select {
+  border-radius: 4em;
+  height: 50px;
+  padding: 0 1.34rem;
+}
+
+.billig-details form input::placeholder {
+  text-transform: uppercase;
+}
+
+.billig-details form select option {
+  padding: 2rem 0 !important;
+}
+
+.billig-details form input:focus,
+.billig-details form input:active {
+  box-shadow: none;
+  outline: none;
+}
+
+.billig-details form select:focus,
+.billig-details form select:active {
+  box-shadow: none;
+  outline: none;
+}
+/* ================= checkout page  ============================== */
