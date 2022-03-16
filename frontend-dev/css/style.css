@@ -863,3 +863,130 @@ section.hero1 .breadcrumb li a {
   font-size: 15.66px !important;
 }
 /* ================= checkout page  ============================== */
+
+/* 404 PAGE NOT FOUND */
+body .page_not_found,
+body .thank-you {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif !important;
+  color: #282a2b;
+  background: #ffede7;
+}
+
+.page_not_found .svg {
+  width: 900px;
+}
+.page_not_found .svg__character {
+  fill: #06038d;
+}
+.page_not_found .svg__line {
+  fill: none;
+  stroke: #c6007e;
+  stroke-dasharray: 6;
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+.page_not_found .svg__dot {
+  fill: #c6007e;
+}
+.page_not_found .svg__plane {
+  transform: translate(-6px, -11px) rotate(25deg);
+  fill: #c6007e;
+}
+.page_not_found .svg__mask {
+  fill: none;
+  stroke: white;
+  stroke-width: 10;
+  stroke-dasharray: 480;
+  stroke-dashoffset: 480;
+}
+
+.page_not_found .text {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 28.33px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #06038d;
+}
+
+:root {
+  --blue: #0e0620;
+  --white: #fff;
+  --green: #06038d;
+}
+
+.page_not_found .btn,
+.thank-you .btn {
+  z-index: 1;
+  overflow: hidden;
+  background: transparent;
+  position: relative;
+  padding: 15px 50px !important;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1em;
+  letter-spacing: 2px;
+  transition: 0.2s ease;
+  font-weight: bold;
+  margin: 5px 0px;
+}
+
+.page_not_found .btn:active,
+.page_not_found .btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.page_not_found .btn.green,
+.thank-you .btn.green {
+  border: 4px solid var(--green);
+  color: var(--blue);
+}
+.page_not_found .btn.green:before,
+.thank-you .btn.green:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--green);
+  z-index: -1;
+  transition: 0.2s ease;
+}
+.page_not_found .btn.green:hover,
+.thank-you .btn.green:hover {
+  color: var(--white);
+  background: var(--green);
+  transition: 0.2s ease;
+}
+.page_not_found .btn.green:hover:before,
+.thank-you .btn.green:hover:before {
+  width: 100%;
+}
+
+/* 404 PAGE NOT FOUND */
+
+/* thank you */
+.thank-you .site-header__title {
+  font-size: 3.45rem;
+  font-weight: 600;
+}
+
+.thank-you i {
+  font-size: 7em;
+  font-weight: 800;
+}
+
+.thank-you p {
+  width: 70%;
+  text-align: center;
+  font-size: 18.23px;
+}
+/* thank you */
