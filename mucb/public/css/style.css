@@ -816,3 +816,64 @@ section.hero1 {
     font-size: 13.66px !important;
   }
   /* ================= cart page  ============================== */
+/* ================= checkout page  ============================== */
+
+.billig-details h4 {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 400;
+    font-size: 27.45px;
+    text-transform: uppercase;
+  }
+
+  .billig-details form {
+    font-family: "Montserrat", sans-serif !important;
+  }
+
+  .billig-details form label {
+    margin: 0.423rem 0;
+  }
+
+  .billig-details form input,
+  .billig-details form select {
+    border-radius: 0.235em;
+    height: 45px;
+    padding: 0 1.34rem;
+  }
+
+  .billig-details form input::placeholder {
+    text-transform: uppercase;
+  }
+
+  .billig-details form select option {
+    padding: 2rem 0 !important;
+  }
+
+  .billig-details form input:focus,
+  .billig-details form input:active {
+    box-shadow: none;
+    outline: none;
+  }
+
+  .billig-details form select:focus,
+  .billig-details form select:active {
+    box-shadow: none;
+    outline: none;
+  }
+
+  .billig-details .password {
+    display: none;
+    transition: all 0.3s ease;
+  }
+
+  .billig-details .password.active {
+    display: block;
+  }
+
+  .payment-details .chechout-btn {
+    height: 60px;
+    padding: 0.25rem 1.367rem !important;
+    border-radius: 4px !important;
+    text-transform: uppercase;
+    font-size: 15.66px !important;
+  }
+  /* ================= checkout page  ============================== */
