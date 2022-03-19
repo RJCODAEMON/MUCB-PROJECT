@@ -155,8 +155,8 @@
                         </ul>
 
                         <div class="row float-end mx-1">
-                            <button class="btn btn-outline-success chechout-btn mt-4">Proceed to
-                                checkout</button>
+                           <a id='checkoutlink' href="/check/"> <button class="btn btn-outline-success chechout-btn mt-4">Proceed to
+                                checkout</button></a>
                         </div>
                     </div>
                 </div>
@@ -182,6 +182,8 @@
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
+
+document.getElementById('checkoutlink').href='check/'
 
 if (localStorage.getItem("packages") === null) {
             $('#tableData').hide();
@@ -230,6 +232,11 @@ var data = JSON.parse(localStorage.getItem('packages'));
         document.getElementById('subtotal').innerHTML = '$ '+data.price;
 
         }
+
+
+        document.getElementById('checkoutlink').href='check/'+data.id;
+
+
         $('#clear').click(function()
         {
             localStorage.clear();

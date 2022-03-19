@@ -412,7 +412,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 payment-details">
                         <h4 class="mb-3">Payment Details</h4>
-                        @foreach ($packages as $packages)
+                        
 
                         <input type="hidden" name="package_id" value="{{ $packages->package_id }}">
                         <input type="hidden" name="price" value="{{ $packages->package_price }}">
@@ -420,20 +420,20 @@
                             <div class="payment-desc py-3">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center py-4">
-                                        <h4>{{ $packages->package_name }}</h4>
+                                        <h4>Basic Inspection</h4>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center py-4">
                                         Price
                                         <span
-                                            class="badge bg-success rounded-pill">${{ $packages->package_price }}</span>
+                                            class="badge bg-success rounded-pill">$0.00</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center py-4">
                                         Subtotal
                                         <span
-                                            class="badge bg-success rounded-pill">${{ $packages->package_price }}</span>
+                                            class="badge bg-success rounded-pill">0.00</span>
                                     </li>
                                 </ul>
-                        @endforeach
+                        
                         <div class="row mx-0">
                             <button type="submit" class="btn btn-outline-success chechout-btn mt-4">Proceed to
                                 checkout</button>

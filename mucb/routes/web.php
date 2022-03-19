@@ -15,11 +15,11 @@ use App\Http\Controllers\CheckoutController;
 |
 */
 
-Route::get('/', [HomeController::class,'display']);
-Route::get('product/{id}', [HomeController::class,'details']);
+Route::get('/', [HomeController::class, 'display']);
+Route::get('product/{id}', [HomeController::class, 'details']);
 Route::view('/cart', 'cart');
-Route::get('/all', [HomeController::class,'all_products']);
-Route::view('/check', 'checkout');
-
-Route::post('/save', [CheckoutController::class,'save']);
-
+Route::get('/all', [HomeController::class, 'all_products']);
+Route::view('check', 'checkout');
+Route::get('/check/{id}',  [CheckoutController::class, 'display']);
+Route::post('/save', [CheckoutController::class, 'save']);
+Route::view('/thankyou', 'thankyou');
