@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-    @extends('layouts.header.header')
-=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,23 +54,6 @@
                         <li class="nav-item">
                             <a class="nav-link px-3" href="#!">Contact us</a>
                         </li>
-                        <li class="nav-item">
-                            <a id="navbarDropdown" class="nav-link px-3" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-
-                                <a class="nav-link px-3" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-
-                        </li>
 
                         <a href="/all" class="btn order-btn mx-3">Book Inspection</a>
                     </ul>
@@ -98,7 +78,6 @@
     <!-- Navbar -->
 
 
->>>>>>> 2a92f74e228c6a813fb3e76885f0f8adf0a5707c
     <!-- main  -->
     <main>
         <!-- hero -->
@@ -364,20 +343,53 @@
             </div>
         </section>
     </main>
-    <script>
+
+    <footer class="footer" id="footer">
+    </footer>
+
+
+    <!-- custome js -->
+    <script src="./js/app.js"></script>
+    <!-- Boostrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <!-- owl js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript">
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: 0,
+            dots: 0,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+
+                }
+            }
+        })
+
         let price = JSON.parse(localStorage.getItem('packages')).price;
         console.log(price);
-       document.getElementById('price').innerHTML =`$${price} <span class="icon">   <i class='bx bx-cart'></i></span><div class="count"> 1</div>`;
+        document.getElementById('price').innerHTML =
+            `$${price} <span class="icon">    <i class='bx bx-cart'></i></span><div class="count"> 1</div>`;
 
-<<<<<<< HEAD
-   </script>
-    @extends('layouts.footer.footer')
-=======
 
     </script>
 
 </body>
 
 </html>
-
->>>>>>> 2a92f74e228c6a813fb3e76885f0f8adf0a5707c

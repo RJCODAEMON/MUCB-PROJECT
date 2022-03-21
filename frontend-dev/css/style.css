@@ -56,6 +56,11 @@ section .section-title::after {
   border-radius: 5px !important;
 }
 
+.btn:active,
+.btn:focus {
+ box-shadow: none!important;
+}
+
 .order-btn {
   background: rgba(226, 13, 13, 0.6) !important;
   color: #fff !important;
@@ -990,3 +995,7 @@ body .thank-you {
   font-size: 18.23px;
 }
 /* thank you */
+
+/* new inspector */
+
+/* new inspector */
