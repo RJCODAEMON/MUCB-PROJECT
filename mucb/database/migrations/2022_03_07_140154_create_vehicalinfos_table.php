@@ -16,20 +16,20 @@ class CreateVehicalinfosTable extends Migration
         Schema::create('vehicalinfos', function (Blueprint $table) {
             $table->id('vehicalinfo_id');
             $table->string('dealership_name',20);
-            $table->string('dealership_phno',20);
+            $table->string('dealership_phno',20)->nullable();
             $table->string('saleperson_name',20);
             $table->string('saleperson_phno',20);
             $table->string('vin',20);
-            $table->string('stock',20);
+            $table->string('stock',20)->nullable();
             $table->string('year',4);
             $table->string('make',20);
             $table->string('model',20);
-            $table->string('trim',20);
-            $table->string('ext_color',20);
-            $table->string('phy_add',50);
+            $table->string('trim',20)->nullable();
+            $table->string('ext_color',20)->nullable();
+            $table->string('phy_add',50)->nullable();
             $table->string('loc_city',20);
-            $table->string('loc_zip',20);
-            $table->string('more_info',100);
+            $table->string('loc_zip',20)->nullable();
+            $table->string('more_info',100)->nullable();
             $table->string('reference',20);
             $table->timestamps();
         });

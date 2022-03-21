@@ -156,9 +156,7 @@
             <div class="container py-5 text-center text-light">
                 <h1 class="text-light text-uppercase ctc-text">We test car as per <br> your choise</h1>
 
-                <div class="video-ads">
-                    dzczxc
-                </div>
+
             </div>
         </section>
 
