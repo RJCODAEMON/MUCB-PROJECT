@@ -15,14 +15,14 @@ class CreateOrderinfosTable extends Migration
     {
         Schema::create('orderinfos', function (Blueprint $table) {
             $table->id('order_info_id');
-            $table->string('company_name',20);
+            $table->string('company_name',20)->nullable();
             $table->string('country',20);
             $table->string('street_add1',50);
-            $table->string('street_add2',50);
+            $table->string('street_add2',50)->nullable();
             $table->string('state',20);
             $table->string('zipcode',10);
-            
-            
+
+
             $table->timestamps();
         });
     }

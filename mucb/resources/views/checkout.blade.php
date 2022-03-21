@@ -126,8 +126,8 @@
                                     <label for="firstName">First name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstName" name="fname" placeholder=""
                                         value="" required>
-                                    <div class="invalid-feedback">
-                                        Valid first name is required.
+                                    <div class="invalid-feedback1">
+                                        @error('fname'){{$message}} @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">

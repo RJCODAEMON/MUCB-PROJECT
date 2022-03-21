@@ -5,29 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Package;
 use Illuminate\Support\Facades\DB;
-
-class HomeController extends Controller
+class HomeController1 extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('home');
-    }
-
     function display()
     {
         $data = Package::all();
@@ -49,4 +28,5 @@ class HomeController extends Controller
            return view('product',['packages'=>$data]);
 
     }
+
 }
