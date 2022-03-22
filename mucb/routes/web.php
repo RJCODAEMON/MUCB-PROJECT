@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CheckoutController;
 
@@ -24,9 +23,3 @@ Route::view('check', 'checkout');
 Route::get('/check/{id}',  [CheckoutController::class, 'display']);
 Route::post('/save', [CheckoutController::class, 'save']);
 Route::view('/thankyou', 'thankyou');
-
-Auth::routes();
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
