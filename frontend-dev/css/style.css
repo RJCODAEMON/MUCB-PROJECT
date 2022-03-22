@@ -58,7 +58,7 @@ section .section-title::after {
 
 .btn:active,
 .btn:focus {
- box-shadow: none!important;
+  box-shadow: none !important;
 }
 
 .order-btn {
@@ -476,26 +476,40 @@ section.hero::after {
 
 /* ctc */
 section.banner {
-  height: 80vh;
+  height: 30vh;
   width: 100%;
-  background-image: url("../img/demo3.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: rgb(17, 17, 17);
 }
 
-section.banner .ctc-text {
+section.banner h2 {
   font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 2.8em;
+  font-size: 2em;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
-section.banner .video-ads {
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  background: #6b55f2;
-  color: #fff;
+/* ctc2 */
+section.banner2 {
+  height: 65vh;
+  width: 100%;
+  background: rgb(17, 17, 17);
+  position: relative;
+}
+
+section.banner2 .img-container {
+  /* position: absolute; */
+  height: 65vh;
+  background-image: url("../img/ctc2.jpg");
+  background-position: 98% 35%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background: #06038d; */
+}
+
+section.banner2 .banner2-desc {
+  /* position: absolute; */
+  height: 100%;
+  padding: 4.4rem 4rem !important;
 }
 
 /* ambition */
