@@ -46,21 +46,12 @@
                                 illum!</td>
                             <td class="text-danger price">$0.00</td>
                             <td class="text-danger price">$0.00</td>
-                        <tr>
-                            <td scope="row" colspan="5">
-                                <form class="coupon-form">
-                                    <div class="d-flex gap-2">
-                                        <input type="text" class="form-control" placeholder="Coupone Code">
-                                        <button class="btn btn-dark coupon">Apply Coupon</button>
-                                    </div>
-                                </form>
-                            </td>
-                        </tr>
+
                         </tr>
                     </tbody>
                 </table>
 
-<H1 id='nocart'style="display:none;">NO ITEMS IN CART</H1>
+<H1 id='nocart'style="display:none;">CART IS EMPTY</H1>
 
                 <div class="row py-5 checkout">
                     <div class="col-lg-4">
@@ -135,14 +126,7 @@ var data = JSON.parse(localStorage.getItem('packages'));
                             <td class="text-danger price">$`+ data.price +`.00</td>
                             <td class="text-danger price">$`+ data.price +`.00</td>
                         <tr>
-                            <td scope="row" colspan="5">
-                                <form class="coupon-form">
-                                    <div class="d-flex gap-2">
-                                        <input type="text" class="form-control" placeholder="Coupone Code">
-                                        <button class="btn btn-dark coupon">Apply Coupon</button>
-                                    </div>
-                                </form>
-                            </td>
+
                         </tr>
                         </tr>
                     </tbody>`;
@@ -153,8 +137,6 @@ var data = JSON.parse(localStorage.getItem('packages'));
         document.getElementById('subtotal').innerHTML = '$ '+data.price;
 
         }
-
-
         document.getElementById('checkoutlink').href='check/'+data.id;
 
 

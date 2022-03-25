@@ -21,14 +21,9 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- remix icon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-        <script>
-            $(document).ready(function(){
-            let price = JSON.parse(localStorage.getItem('packages')).price;
-            console.log(price);
-           document.getElementById('price').innerHTML =`$${price} <span class="icon">   <i class='bx bx-cart'></i></span><div class="count"> 1</div>`;
-            });
-       </script>
 </head>
 
 <body>
@@ -54,7 +49,7 @@
                             <a class="nav-link px-3" href="#!">New Inspection</a>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link px-3" href="#!">New Inspectors</a>
+                            <a class="nav-link px-3" href="/new_inspector">New Inspectors</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-3" href="#!">About us</a>
@@ -83,4 +78,10 @@
             </div>
         </nav>
     </header>
+    <script>
+        $(document).ready(function(){
+        let price = JSON.parse(localStorage.getItem('packages')).price;
+        document.getElementById('price').innerHTML =`$${price} <span class="icon">   <i class='bx bx-cart'></i></span><div class="count"> 1</div>`;
+        });
+   </script>
     <!-- Navbar -->

@@ -294,6 +294,8 @@ section.hero::after {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px !important;
   border-top-right-radius: 0.34em;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .services-card .card-content .service-name {
@@ -547,8 +549,8 @@ section.dwn-sec {
 
 /* ambition */
 .product-list .product-card {
-  max-width: 390px;
-  height: 550px;
+  max-width: 420px;
+  height: 590px;
   background: rgb(254, 248, 248) !important;
   border-radius: 12px 12px 0px 0px;
   overflow: hidden;
@@ -614,7 +616,10 @@ section.dwn-sec {
 .product-card .product-card-desc {
   width: 100% !important;
   height: 100% !important;
-  padding: 1rem 1.895rem !important;
+  padding: 0.6rem 1.895rem !important;
+  /* display: grid;
+  grid-template-rows: 1fr 1fr 1fr; */
+
 }
 
 .product-card .product-card-desc .product-name {
@@ -637,7 +642,7 @@ section.dwn-sec {
   color: #2e2e2e;
   font-size: 16px;
   line-height: 25px;
-  margin-bottom: 2rem;
+  margin: 1rem 0rem;
 }
 
 .product-card .product-card-desc .label .price {

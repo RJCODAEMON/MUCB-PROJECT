@@ -5,7 +5,7 @@
         <section class="hero" id="hero">
             <div class="container py-5">
                 <!-- video -->
-                <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
+                <video playsinline autoplay muted loop {{-- poster="./img/polina.jpg" --}} id="bgvid">
                     <source src="./img/hero-bg.mp4" type="video/mp4">
                 </video>
 
@@ -264,10 +264,5 @@
             </div>
         </section>
     </main>
-    <script>
-        let price = JSON.parse(localStorage.getItem('packages')).price;
-        console.log(price);
-       document.getElementById('price').innerHTML =`$${price} <span class="icon">   <i class='bx bx-cart'></i></span><div class="count"> 1</div>`;
 
-   </script>
     @extends('layouts.footer.footer')

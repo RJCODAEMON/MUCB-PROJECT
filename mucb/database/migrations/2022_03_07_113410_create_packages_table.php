@@ -18,7 +18,7 @@ class CreatePackagesTable extends Migration
             $table->string('package_name',50);
             $table->float('package_price');
             $table->string('package_img');
-            $table->string('package_desc');
+            $table->text('package_desc');
             $table->timestamps();
         });
     }

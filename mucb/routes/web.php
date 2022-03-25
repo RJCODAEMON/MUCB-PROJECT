@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\InspectorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,6 @@ Route::view('check', 'checkout');
 Route::get('/check/{id}',  [CheckoutController::class, 'display']);
 Route::post('/save', [CheckoutController::class, 'save']);
 Route::view('/thankyou', 'thankyou');
+Route::view('new_inspector', 'new_inspector');
+
+Route::post('add_inspector', [InspectorController::class,'new_application']);

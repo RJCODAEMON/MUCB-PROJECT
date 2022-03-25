@@ -12,9 +12,9 @@ use App\Models\vehicalinfo;
 use App\Models\Package;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
-use Carbon\Carbon;
-use Exception;
-use PharIo\Manifest\Email;
+// use Carbon\Carbon;
+// use Exception;
+// use PharIo\Manifest\Email;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -36,15 +36,55 @@ class CheckoutController extends Controller
             [
                 'fname'  => 'required',
                 'lname'  => 'required',
-                'email'  => 'required',
-                'phone' => 'required',
-                'mobile' => 'required'
-            ]
+                'email'  => 'required|email|unique:users,email',
+                'phone' => 'required|digits:10',
+                'mobile' =>'required|digits:10',
+                'country'=> 'required|not_in:1',
+                'street_add1'=> 'required',
+                'state'=> 'required|not_in:1',
+                'zipcode'=> 'required',
 
-        );
+
+                'dealership_name' => 'required',
+                'saleperson_name' => 'required',
+                'saleperson_phno' => 'required',
+                'vin' => 'required',
+                'year' => 'required',
+                'make' => 'required',
+                'model' => 'required',
+                'loc_city' => 'required',
+                'reference' => 'required|not_in:1'
+
+            ],
+            [
+                'fname.required'=>'Please Enter First Name',
+                'lname.required'=>'Please Enter Last Name',
+                'email.required'=>'Please Enter Email',
+                'email.email'=>'Please Enter Abc@abc.com',
+                'email.unique'=>'Already Taken',
+                'phone.required'=>'Please Enter Phone Number',
+                'phone.digits'=>'Please Enter Valid Numbers Only',
+                'mobile.required'=>'Please Enter Mobile',
+                'mobile.digits'=>'Please Enter Valid Numbers Only',
+                'country.required'=>'Please Select Country',
+                'street_add1.required'=>'Please Enter Street Address',
+                'state.required'=>'Please Select State',
+                'zipcode.required'=>'Please Enter Zip Code',
+
+                'dealership_name' => 'Please Enter Dealership Name ',
+                'saleperson_name' => 'Please Enter Salesperson Name',
+                'saleperson_phno' => 'Please Enter SalesPerson Phone',
+                'vin' => 'Please Enter VIN number',
+                'year' => 'Please Enter Year',
+                'make' => 'Please Enter Make',
+                'model' => 'Please Enter Model',
+                'loc_city' => 'Please Enter City',
+                'reference' => 'Please Select Refrence'
+
+            ]);
 
 
-        DB::transaction(function () use ($req) {
+       $result = DB::transaction(function () use ($req) {
 
             $user = new User;
             $user->fname = $req->input('fname');
@@ -56,14 +96,12 @@ class CheckoutController extends Controller
             $user->password = Hash::make($password);
 
 
-            $userflag = $user->save();
-
+            $user->save();
             $useroles = new user_roles;
             $useroles->user_id = $user->id;
 
-
             $useroles->role_id = "2";
-            $userolesflag =  $useroles->save();
+            $useroles->save();
 
             $orderinfo = new orderinfo;
             $orderinfo->company_name = $req->input('company_name');
@@ -72,7 +110,7 @@ class CheckoutController extends Controller
             $orderinfo->street_add2 = $req->input('street_add2');
             $orderinfo->state = $req->input('state');
             $orderinfo->zipcode = $req->input('zipcode');
-            $orderinfoflag = $orderinfo->save();
+            $orderinfo->save();
 
             $vehicalinfo = new vehicalinfo;
 
@@ -92,7 +130,7 @@ class CheckoutController extends Controller
             $vehicalinfo->loc_zip = $req->input('loc_zip');
             $vehicalinfo->more_info = $req->input('more_info');
             $vehicalinfo->reference = $req->input('reference');
-            $vehicalinfoflag = $vehicalinfo->save();
+            $vehicalinfo->save();
 
             $orders = new orders;
 
@@ -101,7 +139,7 @@ class CheckoutController extends Controller
             $orders->price = $req->input('price');;
             $orders->orderinfo_id = $orderinfo->id;
             $orders->vehicalinfo_id = $vehicalinfo->id;
-            $ordersflag = $orders->save();
+            $orders->save();
 
             $data = [
 
@@ -110,14 +148,17 @@ class CheckoutController extends Controller
                         'email' => $user->email,
                         'password' =>  $password
                     ];
-            Mail::to($user->email)->send(new UserRegister($data));
 
-            return redirect('thankyou');
+            Mail::to($user->email)->send(new UserRegister($data));
+            return back();
+
 
         });
 
-
-
-
+        if($result==true)
+        {
+            // return redirect()->back()->with(['message' => 'A message to display']);
+             return redirect('/thankyou');
+        }
     }
 }
