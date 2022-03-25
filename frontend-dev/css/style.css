@@ -1705,6 +1705,7 @@ body .page_not_found {
   background: #9ff1be;
   color: #fff;
   padding: 0.523rem 1.534rem !important;
+  border-radius: 0 !important;
 }
 
 .contact-form button:hover {
