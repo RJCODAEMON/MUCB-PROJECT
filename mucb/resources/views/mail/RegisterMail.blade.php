@@ -29,6 +29,8 @@
                             {{$mail_data['fname'] }}<br>Thanks for Creating Account
 </h4>
  Your Password is <h2>{{$mail_data['password']}}</h2>
+ <br>
+ Your Order is <h2>{{$mail_data['orderid']}}</h2>
 
 <p style="color:#51545e;margin:0.4em 0 1.1875em;font-size:16px;line-height:1.625">
   We're happy you're here. Let's get your Account:

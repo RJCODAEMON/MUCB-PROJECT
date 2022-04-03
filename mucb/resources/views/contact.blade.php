@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUCB Project | Home Page</title>
+    <title>MUCB Project | Contact Us</title>
     <!-- custome css -->
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -21,8 +22,9 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- remix icon -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- remix icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
 
 </head>
 
@@ -43,28 +45,24 @@
                 <div class="collapse navbar-collapse" id="navbarExample01">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link px-3" href="/">Home</a>
+                            <a class="nav-link px-3" href="./index.html">Home</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link px-3" href="#!">New Inspection</a>
-                        </li> -->
                         <li class="nav-item">
-                            <a class="nav-link px-3" href="/new_inspector">New Inspectors</a>
+                            <a class="nav-link px-3" href="#!">New Inspectors</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-3" href="#!">About us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3" href="/contact">Contact us</a>
+                            <a class="nav-link px-3" href="#!">Contact us</a>
                         </li>
 
-                        <a href="/all" class="btn order-btn mx-3">Book Inspection</a>
+                        <a href="./product_catelogue.html" class="btn order-btn mx-3">Book Inspections</a>
                     </ul>
 
                     <div class="cart px-3 py-2">
-                        <a class="cart-data text-light" id='price' href="/cart">
+                        <a class="cart-data text-light">
                             $0.00
-
                             <span class="icon">
                                 <i class='bx bx-cart'></i>
                             </span>
@@ -78,10 +76,48 @@
             </div>
         </nav>
     </header>
-    <script>
-        $(document).ready(function(){
-        let price = JSON.parse(localStorage.getItem('packages')).price;
-        document.getElementById('price').innerHTML =`$${price} <span class="icon">   <i class='bx bx-cart'></i></span><div class="count"> 1</div>`;
-        });
-   </script>
     <!-- Navbar -->
+
+
+    <!-- main  -->
+    <main>
+        <!-- contact us -->
+        <section class="contact-wrapper">
+            <div class="conatact-container">
+                <div class="container">
+                    <form class="contact-form bg-light container p-5 text-dark" method="POST" action="/contact">
+                        @csrf
+                        <h2 class="h2 mb-5">Contact Us</h2>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your name...">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email Address ...">
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control" placeholder="Leave a comment here ..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn">Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- custome js -->
+    <script src="./js/app.js"></script>
+    <!-- Boostrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <!-- owl js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

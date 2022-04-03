@@ -101,20 +101,29 @@
                             <div class="col-md-12 mb-3">
                                 <label for="Comapanyname">Company name (Optional)</label>
                                 <input type="text" class="form-control" id="company_name" name="company_name"
-                                    placeholder="" value="" required>
+                                    placeholder="" value="{{ old('company_name') }}" required>
                                 <div class="invalid-feedback1">
 
                                 </div>
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label for="country">Country / Regioun <span class="text-danger">*</span></label>
-                                <select class="scustom-select d-block w-100" name="country">
+                                <select class="scustom-select d-block w-100" id="country" name="country" value="{{ old('country') }}">
                                     <option value="1">Choose...</option>
                                     <option value="2">One</option>
                                     <option value="3">Two</option>
                                     <option value="4">Three</option>
                                     <option value="5">Four</option>
                                 </select>
+                                <script>
+                                selectElement('country', "{{ old('country') }}");
+
+                                function selectElement(id, valueToSelect) {
+                                    let element = document.getElementById(id);
+                                    element.value = valueToSelect;
+                                }
+</script>
+
                                 <div class="invalid-feedback1">
                                     @error('country')
                                         {{ $message }}
@@ -124,7 +133,7 @@
                             <div class="col-md-12 mb-3">
                                 <label for="street">Street address <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="street_add1" name="street_add1"
-                                    placeholder="house number and street name" value="" required>
+                                    placeholder="house number and street name" value="{{ old('street_add1') }}" required>
 
                                 <div class="invalid-feedback1">
                                     @error('street_add1')
@@ -133,14 +142,14 @@
                                 </div>
 
                                 <input type="text" class="form-control mt-3" id="street_add2" name="street_add2"
-                                    placeholder="Appartment,suit,unit.etc(optional)" value="" required>
+                                    placeholder="Appartment,suit,unit.etc(optional)" value="{{ old('street_add2') }}" required>
                                 <div class="invalid-feedback">
                                     Valid Street is required.
                                 </div>
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label for="city">Town / City <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="city" name="city" placeholder="" value=""
+                                <input type="text" class="form-control" id="city" name="city" placeholder="" value="{{ old('city') }}"
                                     required>
                                 <div class="invalid-feedback">
                                     Valid City is required.
@@ -149,13 +158,21 @@
 
                             <div class="col-md-12 mb-3">
                                 <label for="State">State <span class="text-danger">*</span></label>
-                                <select class="scustom-select d-block w-100" name="state">
+                                <select class="scustom-select d-block w-100" name="state" id="state">
                                     <option value="1">Choose...</option>
                                     <option value="2">One</option>
                                     <option value="3">Two</option>
                                     <option value="4">Three</option>
                                     <option value="5">Four</option>
                                 </select>
+                                <script>
+                                selectElement('state', "{{ old('state') }}");
+
+                                function selectElement(id, valueToSelect) {
+                                    let element = document.getElementById(id);
+                                    element.value = valueToSelect;
+                                }
+                                </script>
                                 <div class="invalid-feedback1">
                                     @error('state')
                                         {{ $message }}
@@ -166,7 +183,7 @@
                             <div class="col-md-12 mb-3">
                                 <label for="zipcode">Zipcode <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="postcode" name="zipcode" placeholder=""
-                                    value="" required>
+                                    value="{{ old('zipcode') }}" required>
                                 <div class="invalid-feedback1">
                                     @error('zipcode')
                                         {{ $message }}
@@ -176,30 +193,12 @@
 
 
 
-                            {{-- <div class="col-md-12 form-check d-flex align-items-center mx-2">
-                                    <input class="form-check-input"
-                                        style="height:15px;width: 15px;padding: 0!important;" type="checkbox" value=""
-                                        id="flexCheckDefault">
-                                    <label class="form-check-label mx-3" for="flexCheckChecked">
-                                        Create an account
-                                    </label>
-                                </div>
-
-                                <div class="col-md-12 mb-3 password" id="password">
-                                    <label for="password">Create account password <span
-                                            class="text-danger">*</span></label>
-                                    <input type="password" class="form-control mt-2" id="password" name="password"
-                                        placeholder="" value="" required>
-                                    <div class="invalid-feedback">
-                                        Valid Password is required.
-                                    </div>
-                                </div> --}}
 
                             <h4 class="my-5">Additional Information</h4>
                             <div class="col-md-12 mb-3">
                                 <label for="delershipname">Delership Name <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="dealername" name="dealership_name"
-                                    placeholder="" value="" required>
+                                    placeholder="" value="{{ old('dealership_name') }}" required>
                                 <div class="invalid-feedback1">
                                     @error('dealership_name')
                                         {{ $message }}
@@ -210,7 +209,7 @@
                             <div class="col-md-12 mb-3">
                                 <label for="dealership_phone">Delership Phone(Optional)</label>
                                 <input type="text" class="form-control" id="dealership_phone" name="dealership_phno"
-                                    placeholder="" value="" required>
+                                    placeholder="" value="{{ old('dealership_phno') }}" required>
                                 <div class="invalid-feedback">
                                     Valid dealership_phone is required.
                                 </div>
@@ -220,7 +219,7 @@
                                 <label for="saleperson_name	">Sales Person Name <span
                                         class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="saleperson_name" name="saleperson_name"
-                                    placeholder="" value="" required>
+                                    placeholder="" value="{{ old('saleperson_name') }}" required>
                                 <div class="invalid-feedback1">
                                     @error('saleperson_name')
                                         {{ $message }}
@@ -232,7 +231,7 @@
                                 <label for="saleperson_phno">Sales Person Phone <span
                                         class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="saleperson_phno" name="saleperson_phno"
-                                    placeholder="Sales person phone" value="" required>
+                                    placeholder="Sales person phone" value="{{ old('saleperson_phno') }}" required>
                                 <div class="invalid-feedback1">
                                     @error('saleperson_phno')
                                         {{ $message }}
@@ -244,7 +243,7 @@
 
                             <div class="col-md-12 mb-3">
                                 <label for="vin">VIN # <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="vin" name="vin" placeholder="" value=""
+                                <input type="text" class="form-control" id="vin" name="vin" placeholder="" value="{{ old('vin') }}"
                                     required>
                                 <div class="invalid-feedback1">
                                     @error('vin')
@@ -256,7 +255,7 @@
                             <div class="col-md-12 mb-3">
                                 <label for="stock">Vehical Stock # (Optional)</label>
                                 <input type="text" class="form-control" id="stock" name="stock" placeholder=""
-                                    value="" required>
+                                    value="{{ old('stock') }}" required>
                                 <div class="invalid-feedback">
                                     Valid stock is required.
                                 </div>
@@ -264,7 +263,7 @@
 
                             <div class="col-md-12 mb-3">
                                 <label for="year">Vehical Year <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="year" name="year" placeholder="" value=""
+                                <input type="text" class="form-control" id="year" name="year" placeholder="" value="{{ old('year') }}"
                                     required>
                                 <div class="invalid-feedback1">
                                     @error('year')
@@ -275,7 +274,7 @@
 
                             <div class="col-md-12 mb-3">
                                 <label for="make">Vehical Make <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="make" name="make" placeholder="" value=""
+                                <input type="text" class="form-control" id="make" name="make" placeholder="" value="{{ old('make') }}"
                                     required>
                                 <div class="invalid-feedback1">
                                     @error('make')
@@ -287,7 +286,7 @@
                             <div class="col-md-12 mb-3">
                                 <label for="model">Vehical Model <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="model" name="model" placeholder=""
-                                    value="" required>
+                                    value="{{ old('model') }}" required>
                                 <div class="invalid-feedback1">
                                     @error('model')
                                         {{ $message }}
@@ -297,7 +296,7 @@
 
                             <div class="col-md-12 mb-3">
                                 <label for="trim">Vehical Trim Level (Optional)</label>
-                                <input type="text" class="form-control" id="trim" name="trim" placeholder="" value=""
+                                <input type="text" class="form-control" id="trim" name="trim" placeholder="" value="{{ old('trim') }}"
                                     required>
                                 <div class="invalid-feedback">
                                     Valid first name is required.
@@ -306,8 +305,8 @@
 
                             <div class="col-md-12 mb-3">
                                 <label for="ext_color">Vehical Exterior Color (Optional)</label>
-                                <input type="text" class="form-control" id="ext_color" name="ext_color"
-                                    placeholder="" value="" required>
+                                <input type="text" class="form-control" id="ext_color" name="ext_color" placeholder=""
+                                    value="{{ old('ext_color') }}" required>
                                 <div class="invalid-feedback">
                                     Valid first name is required.
                                 </div>
@@ -316,7 +315,7 @@
                             <div class="col-md-12 mb-3">
                                 <label for="phy_add">Vehical Physical Address (Optional)</label>
                                 <input type="text" class="form-control" id="phy_add" name="phy_add" placeholder=""
-                                    value="" required>
+                                    value="{{ old('phy_add') }}" required>
                                 <div class="invalid-feedback">
 
                                 </div>
@@ -326,7 +325,7 @@
                                 <label for="loc_city">Vehical Location City <span
                                         class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="loc_city" name="loc_city" placeholder=""
-                                    value="" required>
+                                    value="{{ old('loc_city') }}" required>
                                 <div class="invalid-feedback1">
                                     @error('loc_city')
                                         {{ $message }}
@@ -337,7 +336,7 @@
                             <div class="col-md-12 mb-3">
                                 <label for="loc_zip">Vehical Location ZIP (Optional)</label>
                                 <input type="text" class="form-control" id="loc_zip" name="loc_zip" placeholder=""
-                                    value="" required>
+                                    value="{{ old('loc_zip') }}" required>
                                 <div class="invalid-feedback">
                                     Valid first name is required.
                                 </div>
@@ -346,7 +345,7 @@
                             <div class="col-md-12 mb-3">
                                 <label for="more_info">Addtional Information (Optional)</label>
                                 <textarea class="form-control" id="more_info" name="more_info" rows="3"
-                                    placeholder="Anything else you would like us to know or verify"></textarea>
+                                    placeholder="Anything else you would like us to know or verify" >{{ old('more_info') }}</textarea>
                                 <div class="invalid-feedback">
                                     Valid first name is required.
                                 </div>
@@ -355,13 +354,23 @@
                             <div class="col-md-12 mb-3">
                                 <label for="firstName">How did you here about us <span
                                         class="text-danger">*</span></label>
-                                <select class="scustom-select d-block w-100" name="reference">
+                                <select class="scustom-select d-block w-100" name="reference" id="reference">
                                     <option value="1">Choose...</option>
                                     <option value="2">One</option>
                                     <option value="3">Two</option>
                                     <option value="4">Three</option>
                                     <option value="5">Four</option>
                                 </select>
+
+                                <script>
+                                    selectElement('reference', "{{ old('reference') }}");
+
+                                    function selectElement(id, valueToSelect) {
+                                        let element = document.getElementById(id);
+                                        element.value = valueToSelect;
+                                    }
+                                    </script>
+
                                 <div class="invalid-feedback1">
                                     @error('reference')
                                         {{ $message }}

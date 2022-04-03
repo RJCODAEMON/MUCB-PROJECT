@@ -34,7 +34,7 @@ class InspectorController extends Controller
             ];
             Mail::to($appliedinspector->email)->send(new InspectorRegister($data));
 
-            return redirect()->back()-with('success','Application Submitted');
+            return redirect()->back()->with('success','success');
 
 
         });

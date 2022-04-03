@@ -83,8 +83,9 @@ class CheckoutController extends Controller
 
             ]);
 
+            $GLOBALS['orderid']=0;
 
-       $result = DB::transaction(function () use ($req) {
+      $result = DB::transaction(function () use ($req) {
 
             $user = new User;
             $user->fname = $req->input('fname');
@@ -95,13 +96,7 @@ class CheckoutController extends Controller
             $password = Str::random(8);
             $user->password = Hash::make($password);
 
-
             $user->save();
-            $useroles = new user_roles;
-            $useroles->user_id = $user->id;
-
-            $useroles->role_id = "2";
-            $useroles->save();
 
             $orderinfo = new orderinfo;
             $orderinfo->company_name = $req->input('company_name');
@@ -133,32 +128,34 @@ class CheckoutController extends Controller
             $vehicalinfo->save();
 
             $orders = new orders;
-
             $orders->package_id = $req->input('package_id');;
             $orders->user_id = $user->id;
             $orders->price = $req->input('price');;
             $orders->orderinfo_id = $orderinfo->id;
             $orders->vehicalinfo_id = $vehicalinfo->id;
             $orders->save();
+            $GLOBALS['orderid']=$orders->id;
 
             $data = [
 
                         'fname' => $user->fname,
                         'lname' => $user->lname,
                         'email' => $user->email,
-                        'password' =>  $password
+                        'password' =>  $password,
+                        'orderid' =>$GLOBALS['orderid']
                     ];
 
             Mail::to($user->email)->send(new UserRegister($data));
             return back();
 
 
-        });
+       });
 
         if($result==true)
         {
             // return redirect()->back()->with(['message' => 'A message to display']);
-             return redirect('/thankyou');
+             return view('/thankyou',['orderid'=>$GLOBALS['orderid']]);
+            // return $GLOBALS['orderid']."OK";
         }
     }
 }

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUCB Project |Thank Page</title>
+    <title>MUCB Project | Thank You Page</title>
     <!-- custome css -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <!-- Bootstrap CSS -->
@@ -27,21 +27,36 @@
 
 </head>
 
-<body style="height: 100vh;width:100%;overflow:hidden;">
+<body>
+    <div class="thank-you">
+        <div class="thank-you-page text-center">
+            <div class="site-header" id="header">
+                <h1 class="site-header__title">THANK YOU!</h1>
+                <span class="text-center h6 text-success"><span class="text-success">Track Id :</span>
+                    <span class="h6 text-black">
+                        <strong>
 
-    <main class="thank-you">
-        <header class="site-header" id="header">
-            <h1 class="site-header__title">THANK YOU!</h1>
-        </header>
+                            {{ $orderid }}
 
-        <div class="main-content d-flex justify-content-between align-items-center flex-column">
-            <i class="ri-check-fill text-success"></i>
-            <p class="main-content__body" data-lead-id="main-content-body">Thanks a bunch for filling that out. It means
-                a lot to us, just like you do! We really appreciate you giving us a moment of your time today. Thanks
-                for being you.</p>
+                        </strong>
+                    </span> has been genrated</span>
+            </div>
+
+            <div class="main-content d-flex justify-content-between align-items-center flex-column">
+                <i class="ri-check-fill"></i>
+                <p class="main-content__body" data-lead-id="main-content-body">Thanks a bunch for filling that out. It
+                    means
+                    a lot to us, just like you do! We really appreciate you giving us a moment of your time today.
+                    Thanks
+                    for being you.</p>
+            </div>
+            <a href="/" class="btn green mt-3">Return To Cart</a>
         </div>
-        <a href="/" class="btn green mt-3">Return To Home</a>
-    </main>
+        <div class="pyro">
+            <div class="before"></div>
+            <div class="after"></div>
+        </div>
+    </div>
 
 
     <!-- custome js -->
@@ -57,9 +72,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script>
-            localStorage.clear();
-        </script>
 </body>
 
 </html>
