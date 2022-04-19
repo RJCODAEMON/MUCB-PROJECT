@@ -32,7 +32,7 @@
     <header>
         <nav class="navbar navbar-expand-lg fixed-top navbar-scroll shadow-0">
             <div class="container">
-                <a class="navbar-brand" href="./index.html">LOGO MUCB</a>
+                <a class="navbar-brand" href="/">LOGO MUCB</a>
                 <button class="navbar-toggler ps-0" type="button" data-mdb-toggle="collapse"
                     data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
                     aria-label="Toggle navigation">

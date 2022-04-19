@@ -30,8 +30,6 @@ class CheckoutController extends Controller
 
     function save(Request $req)
     {
-
-
         $req->validate(
             [
                 'fname'  => 'required',

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -76,9 +76,9 @@
             </div>
         </nav>
     </header>
-    <!-- Navbar -->
+    <!-- Navbar --> --}}
 
-
+    @extends('layouts.header.header')
     <!-- main  -->
     <main>
         <!-- contact us -->
@@ -89,13 +89,28 @@
                         @csrf
                         <h2 class="h2 mb-5">Contact Us</h2>
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Your name...">
+                            <input type="text" class="form-control" placeholder="Your name..." name="name" value="{{ old('name') }}">
+                            <div class="invalid-feedback1">
+                                @error('name')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Email Address ...">
+                            <input type="email" class="form-control" placeholder="Email Address ..." name="email" value="{{ old('email') }}">
+                            <div class="invalid-feedback1">
+                                @error('email')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                         <div class="mb-4">
-                            <textarea class="form-control" placeholder="Leave a comment here ..."></textarea>
+                            <textarea class="form-control" placeholder="Leave a comment here ..." name="comment" >{{ old('comment') }}</textarea>
+                            <div class="invalid-feedback1">
+                                @error('comment')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
 
                         <button type="submit" class="btn">Send</button>
@@ -105,19 +120,4 @@
         </section>
     </main>
 
-    <!-- custome js -->
-    <script src="./js/app.js"></script>
-    <!-- Boostrap js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-    <!-- owl js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</body>
 
-</html>

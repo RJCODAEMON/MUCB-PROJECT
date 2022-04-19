@@ -51,9 +51,9 @@
                     </tbody>
                 </table>
 
-<H1 id='nocart'style="display:none;">CART IS EMPTY</H1>
+<div id='nocart'style="display:none;" class="text-center text-danger h2">CART IS EMPTY</div>
 
-                <div class="row py-5 checkout">
+                <div class="row py-5 checkout" id="d-none">
                     <div class="col-lg-4">
                         <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -75,9 +75,7 @@
             </div>
         </section>
     </main>
-    <!-- footer -->
-    <footer class="footer" id="footer">
-    </footer>
+    @extends('layouts.footer.footer')
 
 
     <!-- custome js -->
@@ -101,6 +99,7 @@ if (localStorage.getItem("packages") === null) {
             $('#tableData').hide();
             $('#checkout').hide();
             $('#clear').hide();
+            $('#d-none').hide();
             $('#nocart').show();
 
 

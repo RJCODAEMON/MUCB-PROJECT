@@ -20,32 +20,29 @@
             </nav>
         </div>
     </section>
+
     <!-- cart-table -->
     <section class="cart-detail py-3 mt-2">
         <div class="container py-3">
-            {{-- <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                data-tor="show:[rotateX.from(90deg) @--tor-translateZ(-5rem; 0rem) pull.down(full)] slow">
-                <strong>Returning to customer?</strong> <a href="#" class="text-danger">Click here to login</a>.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                data-tor="show:[rotateX.from(90deg) @--tor-translateZ(-5rem; 0rem) pull.down(full)] slow">
-                <strong>Have a coupone?</strong> <a href="#" class="text-danger">Click here to enter your
-                    code</a>.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
 
-            <div class="alert alert-primary alert-dismissible fade show" role="alert" data-tor="show:scale.from(0)">
-                User login <strong>successfully</strong>.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div> --}}
+            @if($errors->all())
+
+            @foreach ($errors->all() as $err )
+            <div class="alert alert-danger alert-dismissible fade show" role="alert"
+            data-tor="show:[rotateX.from(90deg) @--tor-translateZ(-5rem; 0rem) pull.down(full)] slow">
+            <strong>{{$err}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+            @endforeach
+
+    @endif
 
 
 
             <div class="row my-5">
                 <div class="col-lg-6 col-md-12 billig-details">
                     <h4 class="mb-3">Billing & shipping</h4>
-                    <form class="needs-validation" action="/save" method="POST" novalidate>
+                    <form class="needs-validation" action="/payment-initiate-request" method="POST" novalidate>
                         @csrf
                         <div class="row">
                             <div class="col-md-6 mb-3">
@@ -108,7 +105,8 @@
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label for="country">Country / Regioun <span class="text-danger">*</span></label>
-                                <select class="scustom-select d-block w-100" id="country" name="country" value="{{ old('country') }}">
+                                <select class="scustom-select d-block w-100" id="country" name="country"
+                                    value="{{ old('country') }}">
                                     <option value="1">Choose...</option>
                                     <option value="2">One</option>
                                     <option value="3">Two</option>
@@ -116,13 +114,13 @@
                                     <option value="5">Four</option>
                                 </select>
                                 <script>
-                                selectElement('country', "{{ old('country') }}");
+                                    selectElement('country', "{{ old('country') }}");
 
-                                function selectElement(id, valueToSelect) {
-                                    let element = document.getElementById(id);
-                                    element.value = valueToSelect;
-                                }
-</script>
+                                    function selectElement(id, valueToSelect) {
+                                        let element = document.getElementById(id);
+                                        element.value = valueToSelect;
+                                    }
+                                </script>
 
                                 <div class="invalid-feedback1">
                                     @error('country')
@@ -133,7 +131,8 @@
                             <div class="col-md-12 mb-3">
                                 <label for="street">Street address <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="street_add1" name="street_add1"
-                                    placeholder="house number and street name" value="{{ old('street_add1') }}" required>
+                                    placeholder="house number and street name" value="{{ old('street_add1') }}"
+                                    required>
 
                                 <div class="invalid-feedback1">
                                     @error('street_add1')
@@ -142,15 +141,16 @@
                                 </div>
 
                                 <input type="text" class="form-control mt-3" id="street_add2" name="street_add2"
-                                    placeholder="Appartment,suit,unit.etc(optional)" value="{{ old('street_add2') }}" required>
+                                    placeholder="Appartment,suit,unit.etc(optional)" value="{{ old('street_add2') }}"
+                                    required>
                                 <div class="invalid-feedback">
                                     Valid Street is required.
                                 </div>
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label for="city">Town / City <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="city" name="city" placeholder="" value="{{ old('city') }}"
-                                    required>
+                                <input type="text" class="form-control" id="city" name="city" placeholder=""
+                                    value="{{ old('city') }}" required>
                                 <div class="invalid-feedback">
                                     Valid City is required.
                                 </div>
@@ -166,12 +166,12 @@
                                     <option value="5">Four</option>
                                 </select>
                                 <script>
-                                selectElement('state', "{{ old('state') }}");
+                                    selectElement('state', "{{ old('state') }}");
 
-                                function selectElement(id, valueToSelect) {
-                                    let element = document.getElementById(id);
-                                    element.value = valueToSelect;
-                                }
+                                    function selectElement(id, valueToSelect) {
+                                        let element = document.getElementById(id);
+                                        element.value = valueToSelect;
+                                    }
                                 </script>
                                 <div class="invalid-feedback1">
                                     @error('state')
@@ -243,8 +243,8 @@
 
                             <div class="col-md-12 mb-3">
                                 <label for="vin">VIN # <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="vin" name="vin" placeholder="" value="{{ old('vin') }}"
-                                    required>
+                                <input type="text" class="form-control" id="vin" name="vin" placeholder=""
+                                    value="{{ old('vin') }}" required>
                                 <div class="invalid-feedback1">
                                     @error('vin')
                                         {{ $message }}
@@ -263,8 +263,8 @@
 
                             <div class="col-md-12 mb-3">
                                 <label for="year">Vehical Year <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="year" name="year" placeholder="" value="{{ old('year') }}"
-                                    required>
+                                <input type="text" class="form-control" id="year" name="year" placeholder=""
+                                    value="{{ old('year') }}" required>
                                 <div class="invalid-feedback1">
                                     @error('year')
                                         {{ $message }}
@@ -274,8 +274,8 @@
 
                             <div class="col-md-12 mb-3">
                                 <label for="make">Vehical Make <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="make" name="make" placeholder="" value="{{ old('make') }}"
-                                    required>
+                                <input type="text" class="form-control" id="make" name="make" placeholder=""
+                                    value="{{ old('make') }}" required>
                                 <div class="invalid-feedback1">
                                     @error('make')
                                         {{ $message }}
@@ -296,8 +296,8 @@
 
                             <div class="col-md-12 mb-3">
                                 <label for="trim">Vehical Trim Level (Optional)</label>
-                                <input type="text" class="form-control" id="trim" name="trim" placeholder="" value="{{ old('trim') }}"
-                                    required>
+                                <input type="text" class="form-control" id="trim" name="trim" placeholder=""
+                                    value="{{ old('trim') }}" required>
                                 <div class="invalid-feedback">
                                     Valid first name is required.
                                 </div>
@@ -305,8 +305,8 @@
 
                             <div class="col-md-12 mb-3">
                                 <label for="ext_color">Vehical Exterior Color (Optional)</label>
-                                <input type="text" class="form-control" id="ext_color" name="ext_color" placeholder=""
-                                    value="{{ old('ext_color') }}" required>
+                                <input type="text" class="form-control" id="ext_color" name="ext_color"
+                                    placeholder="" value="{{ old('ext_color') }}" required>
                                 <div class="invalid-feedback">
                                     Valid first name is required.
                                 </div>
@@ -345,7 +345,7 @@
                             <div class="col-md-12 mb-3">
                                 <label for="more_info">Addtional Information (Optional)</label>
                                 <textarea class="form-control" id="more_info" name="more_info" rows="3"
-                                    placeholder="Anything else you would like us to know or verify" >{{ old('more_info') }}</textarea>
+                                    placeholder="Anything else you would like us to know or verify">{{ old('more_info') }}</textarea>
                                 <div class="invalid-feedback">
                                     Valid first name is required.
                                 </div>
@@ -369,7 +369,7 @@
                                         let element = document.getElementById(id);
                                         element.value = valueToSelect;
                                     }
-                                    </script>
+                                </script>
 
                                 <div class="invalid-feedback1">
                                     @error('reference')
@@ -416,12 +416,12 @@
     </section>
 </main>
 <!-- footer -->
-<footer class="footer" id="footer">
-</footer>
+{{-- <footer class="footer" id="footer">
+</footer> --}}
 
 
 <!-- custome js -->
-<script src="/js/app.js"></script>
+{{-- <script src="/js/app.js"></script>
 <!-- Boostrap js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
@@ -432,7 +432,7 @@ integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiq
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
 integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
 
 {{-- <script>
         const passBox = document.getElementById('password');
@@ -444,6 +444,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             }
         });
     </script> --}}
-</body>
+{{-- </body>
 
-</html>
+</html> --}}
+@extends('layouts.footer.footer')

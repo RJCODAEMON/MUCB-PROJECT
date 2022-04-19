@@ -14,20 +14,27 @@
                         <h4 class="my-3">New Inspector Registration</h4>
                         <div class="my-3">
 
+
+                            @if($errors->all())
+
+                            @foreach ($errors->all() as $err )
                             <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                                data-tor="show:[rotateX.from(90deg) @--tor-translateZ(-5rem; 0rem) pull.down(full)] slow">
-                                <strong>Error!</strong> <a href="#" class="text-danger">Please fill the credentials</a>.
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
-                            @if(Session('success'))
-                            <div class="alert alert-primary alert-dismissible fade show" role="alert"
-                                data-tor="show:scale.from(0)">
-                                {{Session('success')}}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
-                            @endif
+                            data-tor="show:[rotateX.from(90deg) @--tor-translateZ(-5rem; 0rem) pull.down(full)] slow">
+                            <strong>{{$err}}</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                            @endforeach
+
+                    @endif
+
+                    @if(Session('success'))
+                    <div class="alert alert-primary alert-dismissible fade show" role="alert"
+                        data-tor="show:scale.from(0)">
+                        {{Session('success')}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                    </div>
+                    @endif
 
                         </div>
 
@@ -112,7 +119,7 @@
         </section>
     </main>
     <!-- footer -->
-    <footer class="footer" id="footer">
+    {{-- <footer class="footer" id="footer">
     </footer>
 
 
@@ -131,4 +138,5 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
-</html>
+</html> --}}
+@extends('layouts.footer.footer')

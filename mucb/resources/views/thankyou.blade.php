@@ -29,33 +29,47 @@
 
 <body>
     <div class="thank-you">
-        <div class="thank-you-page text-center">
-            <div class="site-header" id="header">
+        <div class="thank-you-page py-5 px-4">
+            <div class="site-header mb-2" id="header">
                 <h1 class="site-header__title">THANK YOU!</h1>
-                <span class="text-center h6 text-success"><span class="text-success">Track Id :</span>
-                    <span class="h6 text-black">
-                        <strong>
-
-                            {{ $orderid }}
-
-                        </strong>
-                    </span> has been genrated</span>
             </div>
 
-            <div class="main-content d-flex justify-content-between align-items-center flex-column">
-                <i class="ri-check-fill"></i>
-                <p class="main-content__body" data-lead-id="main-content-body">Thanks a bunch for filling that out. It
-                    means
-                    a lot to us, just like you do! We really appreciate you giving us a moment of your time today.
-                    Thanks
-                    for being you.</p>
+
+
+            <div class="card border border-success rounded p-3 px-4">
+                <h3 class="h3 text-success text-uppercase mb-4">Purchase Details</h3>
+
+                <div class="row mb-3 text-success">
+                    <div class="col-6 key">
+                        <span>Amount</span>
+                    </div>
+                    <div class="col-6 value">
+                        <span>{{$amount}}</span>
+                    </div>
+                </div>
+
+                <div class="row mb-3 text-success">
+                    <div class="col-6 key">
+                        <span>Payment Status</span>
+                    </div>
+                    <div class="col-6 value">
+                        <span>Successful</span>
+                    </div>
+                </div>
+
+                <div class="row text-success">
+                    <div class="col-6 key">
+                        <span>Transaction id</span>
+                    </div>
+                    <div class="col-6 value">
+                        <span>{{$orderid}}</span>
+                    </div>
+                </div>
             </div>
-            <a href="/" class="btn green mt-3">Return To Cart</a>
+
+            <a href="./cart.html" class="return mt-3">Return To Cart</a>
         </div>
-        <div class="pyro">
-            <div class="before"></div>
-            <div class="after"></div>
-        </div>
+
     </div>
 
 

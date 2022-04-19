@@ -25,7 +25,10 @@ class HomeController extends Controller
             ->select()
             ->where('package_id','=',$id)
             ->get();
-           return view('product',['packages'=>$data]);
+
+        $all = Package::all();
+
+        return view('product',['packages'=>$data, 'all_packages'=>$all]);
 
     }
 
