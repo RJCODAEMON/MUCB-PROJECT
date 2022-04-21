@@ -31,8 +31,8 @@ class PaymentController extends Controller
         $req = $request;
         $request->validate(
             [
-                'fname'  => 'required',
-                'lname'  => 'required',
+                'name'  => 'required',
+                // 'lname'  => 'required',
                 'email'  => 'required|email|unique:users,email',
                 'phone' => 'required|digits:10',
                 'mobile' => 'required|digits:10',
@@ -54,8 +54,8 @@ class PaymentController extends Controller
 
             ],
             [
-                'fname.required' => 'Please Enter First Name',
-                'lname.required' => 'Please Enter Last Name',
+                'name.required' => 'Please Enter First Name',
+                // 'lname.required' => 'Please Enter Last Name',
                 'email.required' => 'Please Enter Email',
                 'email.email' => 'Please Enter Abc@abc.com',
                 'email.unique' => 'Already Taken',
@@ -108,8 +108,8 @@ class PaymentController extends Controller
         $result = DB::transaction(function () use ($req) {
 
             $user = new User;
-            $user->fname = $req->input('fname');
-            $user->lname = $req->input('lname');
+            $user->name = $req->input('name')." ".$req->input('lname');
+            // $user->lname = $req->input('lname');
             $user->email = $req->input('email');
             $user->phone = $req->input('phone');
             $user->mobile = $req->input('mobile');
@@ -167,7 +167,7 @@ class PaymentController extends Controller
             'orderId' => $order['id'],
             'razorpayId' => $this->razorpayId,
             'amount' => $request->all()['price'] * 100,
-            'name' => $request->all()['fname'],
+            'name' => $request->all()['name'],
             'currency' => 'INR',
             'email' => $request->all()['email'],
             'contactNumber' => $request->all()['mobile'],
@@ -220,8 +220,8 @@ class PaymentController extends Controller
 
             $email_data = [
 
-                'fname' => $result->fname,
-                'lname' => $result->lname,
+                'name' => $result->name,
+                // 'lname' => $result->lname,
                 'email' => $result->email,
                 'password' => $password,
                 'orderid' => $data

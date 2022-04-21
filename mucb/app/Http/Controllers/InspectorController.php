@@ -40,7 +40,7 @@ class InspectorController extends Controller
             $appliedinspector->save();
             $data = [
 
-                'fname' => $appliedinspector->name,
+                'name' => $appliedinspector->name,
                // 'lname' => $user->lname,
                 'email' => $appliedinspector->email,
 

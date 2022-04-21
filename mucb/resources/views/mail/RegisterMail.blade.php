@@ -26,7 +26,7 @@
                     <td style="word-break:break-word;font-family:Lato,Tahoma,sans-serif;font-size:16px;padding:20px 45px">
                       <div>
                         <h4 style="margin-top:0;color:#333;font-size:24px;font-weight:bold;text-align:left">
-                            {{$mail_data['fname'] }}<br>Thanks for Creating Account
+                            {{$mail_data['name'] }}<br>Thanks for Creating Account
 </h4>
  Your Password is <h2>{{$mail_data['password']}}</h2>
  <br>

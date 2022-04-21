@@ -43,7 +43,7 @@
                                                     <div>
                                                         <h4
                                                             style="margin-top:0;color:#333;font-size:24px;font-weight:bold;text-align:left">
-                                                            {{ $mail_data['fname'] }}<br>Thanks for Showing Interest
+                                                            {{ $mail_data['name'] }}<br>Thanks for Showing Interest
                                                         </h4>
                                                         Your Mail is <h2>{{ $mail_data['email'] }}</h2>
 

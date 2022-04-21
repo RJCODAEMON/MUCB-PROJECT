@@ -47,10 +47,10 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName">First name <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="firstName" name="fname" placeholder=""
-                                    value="{{ old('fname') }}" required>
+                                <input type="text" class="form-control" id="firstName" name="name" placeholder=""
+                                    value="{{ old('name') }}" required>
                                 <div class="invalid-feedback1">
-                                    @error('fname')
+                                    @error('name')
                                         {{ $message }}
                                     @enderror
                                 </div>

@@ -32,8 +32,8 @@ class CheckoutController extends Controller
     {
         $req->validate(
             [
-                'fname'  => 'required',
-                'lname'  => 'required',
+                'name'  => 'required',
+
                 'email'  => 'required|email|unique:users,email',
                 'phone' => 'required|digits:10',
                 'mobile' =>'required|digits:10',
@@ -55,8 +55,8 @@ class CheckoutController extends Controller
 
             ],
             [
-                'fname.required'=>'Please Enter First Name',
-                'lname.required'=>'Please Enter Last Name',
+                'name.required'=>'Please Enter Full Name',
+
                 'email.required'=>'Please Enter Email',
                 'email.email'=>'Please Enter Abc@abc.com',
                 'email.unique'=>'Already Taken',
@@ -86,8 +86,8 @@ class CheckoutController extends Controller
       $result = DB::transaction(function () use ($req) {
 
             $user = new User;
-            $user->fname = $req->input('fname');
-            $user->lname = $req->input('lname');
+            $user->name = $req->input('name')." ".$req->input('lname');
+            // $user->lname = $req->input('lname');
             $user->email = $req->input('email');
             $user->phone = $req->input('phone');
             $user->mobile = $req->input('mobile');
@@ -136,8 +136,8 @@ class CheckoutController extends Controller
 
             $data = [
 
-                        'fname' => $user->fname,
-                        'lname' => $user->lname,
+                        'name' => $user->name,
+                        // 'lname' => $user->lname,
                         'email' => $user->email,
                         'password' =>  $password,
                         'orderid' =>$GLOBALS['orderid']
